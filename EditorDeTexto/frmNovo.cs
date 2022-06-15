@@ -186,13 +186,12 @@ namespace EditorDeTexto
         {
            
                 openFileDialog1.ShowDialog();     // show the dialog
-                if (openFileDialog1.ShowDialog() == DialogResult.OK)
-                {
+
                     filenamee = openFileDialog1.FileName;
                     // load the file into the richTextBox
-                    richTextBox1.LoadFile(filenamee, RichTextBoxStreamType.PlainText);    
+                    richTextBox1.LoadFile(filenamee, RichTextBoxStreamType.RichText);    
                                                                                           
-                }
+         
           
         }
 
@@ -203,13 +202,12 @@ namespace EditorDeTexto
             {
                 saveFileDialog1.ShowDialog();    
                 string file;
-                if (saveFileDialog1.ShowDialog() == DialogResult.OK)
-                {
+
                     string filename = saveFileDialog1.FileName;
-                    richTextBox1.SaveFile(filename, RichTextBoxStreamType.PlainText);
+                    richTextBox1.SaveFile(filename, RichTextBoxStreamType.RichText);
                     file = Path.GetFileName(filename); 
-                    MessageBox.Show("Seu arquivo " + file + "foi salvo com sucesso.", "Gravação bem sucedida", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+                    MessageBox.Show("Seu arquivo " + file + " foi salvo com sucesso.", "Gravação bem sucedida", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
 
             }
             catch (Exception ex)
@@ -238,7 +236,9 @@ namespace EditorDeTexto
             // sets the selected font famly style
             richTextBox1.SelectionFont = new Font(cboFontFamily.Text, richTextBox1.SelectionFont.Size);
 
-        } 
+        }
+
+
     }
 }
 

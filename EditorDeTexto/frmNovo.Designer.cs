@@ -55,6 +55,7 @@
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.panel7 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,12 +76,12 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1018, 13);
+            this.panel1.Size = new System.Drawing.Size(1018, 15);
             this.panel1.TabIndex = 1;
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.Menu;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panel2.Controls.Add(this.cboTamanho);
             this.panel2.Controls.Add(this.cboFontFamily);
             this.panel2.Controls.Add(this.btnAlinhaDireita);
@@ -101,9 +102,9 @@
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.btnAbrir);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 13);
+            this.panel2.Location = new System.Drawing.Point(0, 15);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1018, 51);
+            this.panel2.Size = new System.Drawing.Size(1018, 56);
             this.panel2.TabIndex = 3;
             // 
             // cboTamanho
@@ -130,12 +131,12 @@
             // 
             this.btnAlinhaDireita.Appearance = System.Windows.Forms.Appearance.Button;
             this.btnAlinhaDireita.AutoSize = true;
-            this.btnAlinhaDireita.BackgroundImage = global::EditorDeTexto.Properties.Resources.align_right;
+            this.btnAlinhaDireita.BackgroundImage = global::EditorDeTexto.Properties.Resources.align_right1;
             this.btnAlinhaDireita.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnAlinhaDireita.FlatAppearance.BorderSize = 0;
             this.btnAlinhaDireita.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAlinhaDireita.Font = new System.Drawing.Font("Segoe UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnAlinhaDireita.Location = new System.Drawing.Point(761, 8);
+            this.btnAlinhaDireita.Location = new System.Drawing.Point(761, 7);
             this.btnAlinhaDireita.Name = "btnAlinhaDireita";
             this.btnAlinhaDireita.Size = new System.Drawing.Size(17, 21);
             this.btnAlinhaDireita.TabIndex = 27;
@@ -147,7 +148,7 @@
             // 
             this.btnAlinhaCentro.Appearance = System.Windows.Forms.Appearance.Button;
             this.btnAlinhaCentro.AutoSize = true;
-            this.btnAlinhaCentro.BackgroundImage = global::EditorDeTexto.Properties.Resources.align;
+            this.btnAlinhaCentro.BackgroundImage = global::EditorDeTexto.Properties.Resources.align_white;
             this.btnAlinhaCentro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnAlinhaCentro.FlatAppearance.BorderSize = 0;
             this.btnAlinhaCentro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -164,12 +165,12 @@
             // 
             this.btnAlinhaEsquerda.Appearance = System.Windows.Forms.Appearance.Button;
             this.btnAlinhaEsquerda.AutoSize = true;
-            this.btnAlinhaEsquerda.BackgroundImage = global::EditorDeTexto.Properties.Resources.align_left;
+            this.btnAlinhaEsquerda.BackgroundImage = global::EditorDeTexto.Properties.Resources.align_left_white;
             this.btnAlinhaEsquerda.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnAlinhaEsquerda.FlatAppearance.BorderSize = 0;
             this.btnAlinhaEsquerda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAlinhaEsquerda.Font = new System.Drawing.Font("Segoe UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnAlinhaEsquerda.Location = new System.Drawing.Point(706, 7);
+            this.btnAlinhaEsquerda.Location = new System.Drawing.Point(706, 6);
             this.btnAlinhaEsquerda.Name = "btnAlinhaEsquerda";
             this.btnAlinhaEsquerda.Size = new System.Drawing.Size(17, 21);
             this.btnAlinhaEsquerda.TabIndex = 25;
@@ -181,12 +182,12 @@
             // 
             this.btnUnderline.Appearance = System.Windows.Forms.Appearance.Button;
             this.btnUnderline.AutoSize = true;
-            this.btnUnderline.BackgroundImage = global::EditorDeTexto.Properties.Resources.underline;
+            this.btnUnderline.BackgroundImage = global::EditorDeTexto.Properties.Resources.underline_white;
             this.btnUnderline.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnUnderline.FlatAppearance.BorderSize = 0;
             this.btnUnderline.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUnderline.Font = new System.Drawing.Font("Segoe UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnUnderline.Location = new System.Drawing.Point(308, 5);
+            this.btnUnderline.Location = new System.Drawing.Point(308, 6);
             this.btnUnderline.Name = "btnUnderline";
             this.btnUnderline.Size = new System.Drawing.Size(17, 21);
             this.btnUnderline.TabIndex = 24;
@@ -198,7 +199,7 @@
             // 
             this.btnItalic.Appearance = System.Windows.Forms.Appearance.Button;
             this.btnItalic.AutoSize = true;
-            this.btnItalic.BackgroundImage = global::EditorDeTexto.Properties.Resources.italics;
+            this.btnItalic.BackgroundImage = global::EditorDeTexto.Properties.Resources.italics_white;
             this.btnItalic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnItalic.FlatAppearance.BorderSize = 0;
             this.btnItalic.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -215,12 +216,12 @@
             // 
             this.btnBold.Appearance = System.Windows.Forms.Appearance.Button;
             this.btnBold.AutoSize = true;
-            this.btnBold.BackgroundImage = global::EditorDeTexto.Properties.Resources.bold;
+            this.btnBold.BackgroundImage = global::EditorDeTexto.Properties.Resources.bold_white;
             this.btnBold.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnBold.FlatAppearance.BorderSize = 0;
             this.btnBold.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBold.Font = new System.Drawing.Font("Segoe UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnBold.Location = new System.Drawing.Point(253, 4);
+            this.btnBold.Location = new System.Drawing.Point(253, 5);
             this.btnBold.Name = "btnBold";
             this.btnBold.Size = new System.Drawing.Size(17, 21);
             this.btnBold.TabIndex = 22;
@@ -231,17 +232,17 @@
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.Maroon;
-            this.panel6.Location = new System.Drawing.Point(801, 2);
+            this.panel6.Location = new System.Drawing.Point(801, 1);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(2, 51);
+            this.panel6.Size = new System.Drawing.Size(1, 56);
             this.panel6.TabIndex = 6;
             // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.Maroon;
-            this.panel5.Location = new System.Drawing.Point(678, 2);
+            this.panel5.Location = new System.Drawing.Point(678, 1);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(2, 51);
+            this.panel5.Size = new System.Drawing.Size(1, 56);
             this.panel5.TabIndex = 5;
             // 
             // panel4
@@ -249,7 +250,7 @@
             this.panel4.BackColor = System.Drawing.Color.Maroon;
             this.panel4.Location = new System.Drawing.Point(221, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(2, 51);
+            this.panel4.Size = new System.Drawing.Size(1, 56);
             this.panel4.TabIndex = 21;
             // 
             // panel3
@@ -257,21 +258,21 @@
             this.panel3.BackColor = System.Drawing.Color.Maroon;
             this.panel3.Location = new System.Drawing.Point(116, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(2, 51);
+            this.panel3.Size = new System.Drawing.Size(1, 56);
             this.panel3.TabIndex = 4;
             // 
             // button8
             // 
             this.button8.BackColor = System.Drawing.Color.Transparent;
-            this.button8.BackgroundImage = global::EditorDeTexto.Properties.Resources.big_dictionary;
+            this.button8.BackgroundImage = global::EditorDeTexto.Properties.Resources.big_dictionary_white;
             this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button8.FlatAppearance.BorderSize = 0;
             this.button8.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
             this.button8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(197)))), ((int)(((byte)(246)))));
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Location = new System.Drawing.Point(155, 4);
+            this.button8.Location = new System.Drawing.Point(155, 6);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(30, 25);
+            this.button8.Size = new System.Drawing.Size(30, 24);
             this.button8.TabIndex = 20;
             this.button8.UseVisualStyleBackColor = false;
             // 
@@ -279,8 +280,8 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.ForeColor = System.Drawing.Color.Maroon;
-            this.label4.Location = new System.Drawing.Point(140, 32);
+            this.label4.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label4.Location = new System.Drawing.Point(140, 36);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(63, 15);
             this.label4.TabIndex = 19;
@@ -290,8 +291,8 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.Color.Maroon;
-            this.label3.Location = new System.Drawing.Point(31, 31);
+            this.label3.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label3.Location = new System.Drawing.Point(34, 35);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(51, 15);
             this.label3.TabIndex = 18;
@@ -300,15 +301,15 @@
             // btnSalvar
             // 
             this.btnSalvar.BackColor = System.Drawing.Color.Transparent;
-            this.btnSalvar.BackgroundImage = global::EditorDeTexto.Properties.Resources.save;
+            this.btnSalvar.BackgroundImage = global::EditorDeTexto.Properties.Resources.save_white1;
             this.btnSalvar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnSalvar.FlatAppearance.BorderSize = 0;
             this.btnSalvar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
             this.btnSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(197)))), ((int)(((byte)(246)))));
             this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalvar.Location = new System.Drawing.Point(67, 2);
+            this.btnSalvar.Location = new System.Drawing.Point(69, 5);
             this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(30, 25);
+            this.btnSalvar.Size = new System.Drawing.Size(24, 27);
             this.btnSalvar.TabIndex = 11;
             this.btnSalvar.UseVisualStyleBackColor = false;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
@@ -317,8 +318,8 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.Maroon;
-            this.label2.Location = new System.Drawing.Point(722, 34);
+            this.label2.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label2.Location = new System.Drawing.Point(722, 36);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(39, 15);
             this.label2.TabIndex = 10;
@@ -328,8 +329,8 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.Maroon;
-            this.label1.Location = new System.Drawing.Point(271, 30);
+            this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label1.Location = new System.Drawing.Point(271, 34);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(39, 15);
             this.label1.TabIndex = 4;
@@ -338,15 +339,15 @@
             // btnAbrir
             // 
             this.btnAbrir.BackColor = System.Drawing.Color.Transparent;
-            this.btnAbrir.BackgroundImage = global::EditorDeTexto.Properties.Resources.folder;
+            this.btnAbrir.BackgroundImage = global::EditorDeTexto.Properties.Resources.folder_white;
             this.btnAbrir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnAbrir.FlatAppearance.BorderSize = 0;
             this.btnAbrir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
             this.btnAbrir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(197)))), ((int)(((byte)(246)))));
             this.btnAbrir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAbrir.Location = new System.Drawing.Point(24, 2);
+            this.btnAbrir.Location = new System.Drawing.Point(27, 5);
             this.btnAbrir.Name = "btnAbrir";
-            this.btnAbrir.Size = new System.Drawing.Size(30, 25);
+            this.btnAbrir.Size = new System.Drawing.Size(24, 27);
             this.btnAbrir.TabIndex = 5;
             this.btnAbrir.UseVisualStyleBackColor = false;
             this.btnAbrir.Click += new System.EventHandler(this.btnAbrir_Click);
@@ -361,16 +362,22 @@
             this.contextMenuStrip2.Name = "contextMenuStrip2";
             this.contextMenuStrip2.Size = new System.Drawing.Size(61, 4);
             // 
-            // openFileDialog1
+            // panel7
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
+            this.panel7.BackColor = System.Drawing.Color.Maroon;
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel7.Location = new System.Drawing.Point(0, 71);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(1018, 1);
+            this.panel7.TabIndex = 4;
             // 
             // frmNovo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Window;
+            this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(1018, 705);
+            this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.richTextBox1);
@@ -411,5 +418,6 @@
         private SaveFileDialog saveFileDialog1;
         private ComboBox cboTamanho;
         private ComboBox cboFontFamily;
+        private Panel panel7;
     }
 }
