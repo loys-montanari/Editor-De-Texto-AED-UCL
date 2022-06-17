@@ -56,6 +56,8 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,7 +68,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.richTextBox1.Location = new System.Drawing.Point(12, 125);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(994, 568);
+            this.richTextBox1.Size = new System.Drawing.Size(667, 568);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
             // 
@@ -275,6 +277,7 @@
             this.button8.Size = new System.Drawing.Size(30, 24);
             this.button8.TabIndex = 20;
             this.button8.UseVisualStyleBackColor = false;
+
             // 
             // label4
             // 
@@ -371,12 +374,32 @@
             this.panel7.Size = new System.Drawing.Size(1018, 1);
             this.panel7.TabIndex = 4;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(839, 78);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "posicao palavra";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // richTextBox2
+            // 
+            this.richTextBox2.Location = new System.Drawing.Point(706, 125);
+            this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.Size = new System.Drawing.Size(300, 305);
+            this.richTextBox2.TabIndex = 6;
+            this.richTextBox2.Text = "";
+            // 
             // frmNovo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(1018, 705);
+            this.Controls.Add(this.richTextBox2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -419,5 +442,7 @@
         private ComboBox cboTamanho;
         private ComboBox cboFontFamily;
         private Panel panel7;
+        private Button button1;
+        private RichTextBox richTextBox2;
     }
 }
