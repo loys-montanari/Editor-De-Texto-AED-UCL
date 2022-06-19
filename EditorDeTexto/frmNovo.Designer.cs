@@ -376,6 +376,7 @@
             // 
             // button1
             // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.Location = new System.Drawing.Point(839, 91);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 28);
@@ -386,6 +387,8 @@
             // 
             // clbPalavrasNovas
             // 
+            this.clbPalavrasNovas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.clbPalavrasNovas.FormattingEnabled = true;
             this.clbPalavrasNovas.Location = new System.Drawing.Point(839, 125);
             this.clbPalavrasNovas.Name = "clbPalavrasNovas";
@@ -394,6 +397,7 @@
             // 
             // btnAddPalavras
             // 
+            this.btnAddPalavras.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAddPalavras.Location = new System.Drawing.Point(931, 91);
             this.btnAddPalavras.Name = "btnAddPalavras";
             this.btnAddPalavras.Size = new System.Drawing.Size(75, 28);
