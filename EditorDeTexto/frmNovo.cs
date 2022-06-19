@@ -15,6 +15,8 @@ namespace EditorDeTexto
     public partial class frmNovo : Form
     {
         ListaEncadeada[] dicionario = new ListaEncadeada[20000];
+        List<string> palavrascheckbox = new List<string>();
+
         string filenamee;
         public frmNovo()
         {
@@ -35,7 +37,7 @@ namespace EditorDeTexto
                 cboTamanho.Items.Add(i);
             }
             carregardicionario();
-
+            this.clbPalavrasNovas.Visible = false;
 
 
         }
@@ -193,8 +195,6 @@ namespace EditorDeTexto
             // load the file into the richTextBox
             richTextBox1.LoadFile(filenamee, RichTextBoxStreamType.PlainText);
 
-
-
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
@@ -250,7 +250,7 @@ namespace EditorDeTexto
             {
 
                 int tamanhoVet;
-
+                
                 int[] codasc = new int[30];
                 int somacodasc = 0;
 
@@ -265,21 +265,29 @@ namespace EditorDeTexto
                     codasc[i] = codigoascii;
                     somacodasc = somacodasc + codasc[i];
                 }
-
-                string posicao = somacodasc.ToString();
-                richTextBox2.AppendText($"{item} ");
-                richTextBox2.AppendText($"{posicao} ");
-
-
+               
+                if(dicionario[somacodasc] == null )
+                {
+                    Destacar(richTextBox1, item);
+                    palavrascheckbox.Add(item);
+                    clbPalavrasNovas.Items.Add(item);
+                    
+                } 
+                else if(dicionario[somacodasc].buscaElemento(item) == false)
+                {
+                    Destacar(richTextBox1, item);
+                    palavrascheckbox.Add(item);
+                    clbPalavrasNovas.Items.Add(item);
+                }
 
             }
+            this.clbPalavrasNovas.Visible = true;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             checarpalavras(richTextBox1);
         }
-
 
         private void carregardicionario()
         {
@@ -320,22 +328,81 @@ namespace EditorDeTexto
                     
                 }
                 else {
-                    dicionario[somacodasc].insereInicio(item);
-                    
-                
+                    dicionario[somacodasc].insereInicio(item);                  
                 }
 
                 string posicao = somacodasc.ToString();
-                richTextBox2.AppendText($"{item} ");
-                richTextBox2.AppendText($"{posicao} ");
+
             }
             
 
 
         }
 
+        private void Destacar(RichTextBox rc, string palavra)
+        {
+
+                int posicao = 0;
+                while (posicao > -1)
+                {
+                    posicao = rc.Text.IndexOf(palavra, posicao);
+                    if (posicao > -1)
+                    {
+                        rc.Select(posicao, palavra.Length);
+                        rc.SelectionBackColor = Color.LightBlue;
+                        rc.Select(0, 0);
+                        posicao += palavra.Length;
+                    }
+                }
+        }
+
+        private void btnAddPalavras_Click(object sender, EventArgs e)
+        {
+            addPalavras(palavrascheckbox);
+
+        }
+    
+    
+        private void addPalavras(List<string> novas)
+        {
+
+            foreach (var item in novas)
+            {
+
+                int tamanhoVet;
+                int[] codasc = new int[30];
+                int somacodasc = 0;
 
 
+                tamanhoVet = (item.Length);
+
+                Char[] caractere = item.ToUpper().ToCharArray();
+
+                for (int i = 0; i < tamanhoVet; i++)
+                {
+                    int codigoascii = Convert.ToInt32(caractere[i]);
+                    codasc[i] = codigoascii;
+                    somacodasc = somacodasc + codasc[i];
+                }
+
+                if (dicionario[somacodasc] == null)
+                {
+                    dicionario[somacodasc] = new ListaEncadeada();
+                    dicionario[somacodasc].insereInicio(item);
+                    novas.Remove(item);
+
+                }
+                else
+                {
+                    dicionario[somacodasc].insereInicio(item);
+                    novas.Remove(item);
+                }
+
+            }
+            
+        }
+    
+    
     }
 }
 

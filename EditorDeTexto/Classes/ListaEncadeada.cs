@@ -91,12 +91,28 @@ namespace EditorDeTexto.Classes
             
         }
 
-        public string retornadicionario(ListaEncadeada lista)
+        public bool buscaElemento(string palavra)
         {
+            bool resultado = true;
 
-            return lista.ToString();
+            if (cabeca != null)
+            {
+                No temp = cabeca;
+                string elemento = temp.elemento;
+                while ( palavra != elemento && temp != null)
+                {
+                    if (palavra != elemento)
+                    {
+
+                         resultado = false;
+                        
+                         temp = temp.next;
+                    }
+
+                }                             
+            }
+            return resultado;
         }
 
-        
     }
 }

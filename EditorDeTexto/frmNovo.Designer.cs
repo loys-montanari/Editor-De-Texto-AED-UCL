@@ -57,7 +57,8 @@
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.panel7 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.clbPalavrasNovas = new System.Windows.Forms.CheckedListBox();
+            this.btnAddPalavras = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,7 +69,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.richTextBox1.Location = new System.Drawing.Point(12, 125);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(667, 568);
+            this.richTextBox1.Size = new System.Drawing.Size(790, 568);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
             // 
@@ -277,7 +278,6 @@
             this.button8.Size = new System.Drawing.Size(30, 24);
             this.button8.TabIndex = 20;
             this.button8.UseVisualStyleBackColor = false;
-
             // 
             // label4
             // 
@@ -376,21 +376,31 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(839, 78);
+            this.button1.Location = new System.Drawing.Point(839, 91);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(75, 28);
             this.button1.TabIndex = 5;
             this.button1.Text = "posicao palavra";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // richTextBox2
+            // clbPalavrasNovas
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(706, 125);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(300, 305);
-            this.richTextBox2.TabIndex = 6;
-            this.richTextBox2.Text = "";
+            this.clbPalavrasNovas.FormattingEnabled = true;
+            this.clbPalavrasNovas.Location = new System.Drawing.Point(839, 125);
+            this.clbPalavrasNovas.Name = "clbPalavrasNovas";
+            this.clbPalavrasNovas.Size = new System.Drawing.Size(167, 274);
+            this.clbPalavrasNovas.TabIndex = 6;
+            // 
+            // btnAddPalavras
+            // 
+            this.btnAddPalavras.Location = new System.Drawing.Point(931, 91);
+            this.btnAddPalavras.Name = "btnAddPalavras";
+            this.btnAddPalavras.Size = new System.Drawing.Size(75, 28);
+            this.btnAddPalavras.TabIndex = 5;
+            this.btnAddPalavras.Text = "Adicionar";
+            this.btnAddPalavras.UseVisualStyleBackColor = true;
+            this.btnAddPalavras.Click += new System.EventHandler(this.btnAddPalavras_Click);
             // 
             // frmNovo
             // 
@@ -398,7 +408,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(1018, 705);
-            this.Controls.Add(this.richTextBox2);
+            this.Controls.Add(this.clbPalavrasNovas);
+            this.Controls.Add(this.btnAddPalavras);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel2);
@@ -443,6 +454,7 @@
         private ComboBox cboFontFamily;
         private Panel panel7;
         private Button button1;
-        private RichTextBox richTextBox2;
+        private CheckedListBox clbPalavrasNovas;
+        private Button btnAddPalavras;
     }
 }
