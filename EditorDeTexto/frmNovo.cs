@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Drawing.Text;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,7 +15,8 @@ namespace EditorDeTexto
 {
     public partial class frmNovo : Form
     {
-        string caminho = "C:\\Users\\lamontanari\\Source\\Repos\\loys-montanari\\Editor-De-Texto-AED-UCL\\EditorDeTexto\\Dicionario.txt";
+        
+
         ListaEncadeada[] dicionario = new ListaEncadeada[20000];
         List<string> palavrascheckbox = new List<string>();
 
@@ -273,19 +275,15 @@ namespace EditorDeTexto
                
                 if(dicionario[somacodasc] == null )
                 {
-                    Destacar(richTextBox1, item.ToLower());                    
+                                      
                     clbPalavrasNovas.Items.Add(item);
                     
                 } 
                 else if(dicionario[somacodasc].buscaElemento(item) == false)
                 {
-                    Destacar(richTextBox1, item.ToLower());
+                    
                     clbPalavrasNovas.Items.Add(item);
                     
-                }
-                else
-                {
-                    RemoverDestaque(richTextBox1, item);
                 }
 
             }
@@ -296,10 +294,14 @@ namespace EditorDeTexto
 
         private void carregardicionario()
         {
-            
+;
+            string exeFile = (new System.Uri(Assembly.GetEntryAssembly().CodeBase)).AbsolutePath;
+            string exeDir = Path.GetDirectoryName(exeFile);
+            var caminho = Path.Combine(exeDir, "..\\Dicionario.txt");
 
-            string conteudo = File.ReadAllText("C:\\Users\\lamontanari\\Source\\Repos\\loys-montanari\\Editor-De-Texto-AED-UCL\\EditorDeTexto\\Dicionario.txt");
 
+            //            string conteudo = File.ReadAllText("C:\\Users\\lamontanari\\Source\\Repos\\loys-montanari\\Editor-De-Texto-AED-UCL\\EditorDeTexto\\Dicionario.txt");
+            string conteudo = File.ReadAllText(caminho);
             string[] vetorpalavras = conteudo.Split(",");
 
             StringComparer ordemalfabetica = StringComparer.CurrentCultureIgnoreCase;
@@ -346,40 +348,7 @@ namespace EditorDeTexto
             
         }
 
-        private void Destacar(RichTextBox rc, string palavra)
-        {
-
-                int posicao = 0;
-                while (posicao > -1)
-                {
-                    posicao = rc.Text.IndexOf(palavra, posicao);
-                    if (posicao > -1)
-                    {
-                        rc.Select(posicao, palavra.Length);
-                        rc.SelectionBackColor = Color.LightBlue;
-                        rc.Select(0, 0);
-                        posicao += palavra.Length;
-                    }
-                }
-        }
-
-        private void RemoverDestaque(RichTextBox rc, string palavra)
-        {
-
-            int posicao = 0;
-            while (posicao > -1)
-            {
-                posicao = rc.Text.IndexOf(palavra, posicao);
-                if (posicao > -1)
-                {
-                    rc.Select(posicao, palavra.Length);
-                    rc.SelectionBackColor = Color.Transparent;
-                    rc.Select(0, 0);
-                    posicao += palavra.Length;
-                }
-            }
-        }
-
+       
         private void btnAddPalavras_Click(object sender, EventArgs e)
         {
             addPalavras();
@@ -388,6 +357,9 @@ namespace EditorDeTexto
     
         private void addPalavras()
         {
+            string exeFile = (new System.Uri(Assembly.GetEntryAssembly().CodeBase)).AbsolutePath;
+            string exeDir = Path.GetDirectoryName(exeFile);
+            var caminho = Path.Combine(exeDir, "..\\Dicionario.txt");
 
             foreach (var item in clbPalavrasNovas.CheckedItems)
             {
@@ -422,10 +394,9 @@ namespace EditorDeTexto
 
                 }
                 
-
             }     
-                  clbPalavrasNovas.Items.Clear();
                   carregardicionario();
+                  clbPalavrasNovas.Items.Clear();
                   checarpalavras(richTextBox1);
                   MessageBox.Show("Palavras adicionadas ao dicionário com sucesso!");
         }

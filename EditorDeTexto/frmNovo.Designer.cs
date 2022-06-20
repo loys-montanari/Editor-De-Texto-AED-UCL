@@ -448,7 +448,7 @@
             this.lblPalavrasNovas.TabIndex = 21;
             this.lblPalavrasNovas.Text = "Palavras Novas";
             // 
-            // frmNovo
+            // frmNovo 
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
