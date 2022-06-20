@@ -14,6 +14,7 @@ namespace EditorDeTexto
 {
     public partial class frmNovo : Form
     {
+        string caminho = "C:\\Users\\lamontanari\\Source\\Repos\\loys-montanari\\Editor-De-Texto-AED-UCL\\EditorDeTexto\\Dicionario.txt";
         ListaEncadeada[] dicionario = new ListaEncadeada[20000];
         List<string> palavrascheckbox = new List<string>();
 
@@ -240,8 +241,8 @@ namespace EditorDeTexto
         }
 
         private void checarpalavras(RichTextBox texto)
-        {
-
+        {   
+            
             string contapalavra = texto.Text;
 
             string[] vetorpalavras = contapalavra.Split(" ");
@@ -268,16 +269,19 @@ namespace EditorDeTexto
                
                 if(dicionario[somacodasc] == null )
                 {
-                    Destacar(richTextBox1, item);
-                    palavrascheckbox.Add(item);
+                    Destacar(richTextBox1, item);                    
                     clbPalavrasNovas.Items.Add(item);
                     
                 } 
                 else if(dicionario[somacodasc].buscaElemento(item) == false)
                 {
                     Destacar(richTextBox1, item);
-                    palavrascheckbox.Add(item);
                     clbPalavrasNovas.Items.Add(item);
+                    
+                }
+                else
+                {
+                    RemoverDestaque(richTextBox1, item);
                 }
 
             }
@@ -287,6 +291,7 @@ namespace EditorDeTexto
         private void button1_Click(object sender, EventArgs e)
         {
             checarpalavras(richTextBox1);
+            
         }
 
         private void carregardicionario()
@@ -324,11 +329,15 @@ namespace EditorDeTexto
                 if (dicionario[somacodasc] == null)
                 {
                     dicionario[somacodasc] = new ListaEncadeada();
-                    dicionario[somacodasc].insereInicio(item);
-                    
+                    dicionario[somacodasc].insereFim(item);
+                    richTextBox2.AppendText($"{item} ");
+
+
                 }
                 else {
-                    dicionario[somacodasc].insereInicio(item);                  
+                    dicionario[somacodasc].insereFim(item);
+                    richTextBox2.AppendText($"{item} ");
+
                 }
 
                 string posicao = somacodasc.ToString();
@@ -356,17 +365,34 @@ namespace EditorDeTexto
                 }
         }
 
+        private void RemoverDestaque(RichTextBox rc, string palavra)
+        {
+
+            int posicao = 0;
+            while (posicao > -1)
+            {
+                posicao = rc.Text.IndexOf(palavra, posicao);
+                if (posicao > -1)
+                {
+                    rc.Select(posicao, palavra.Length);
+                    rc.SelectionBackColor = Color.Transparent;
+                    rc.Select(0, 0);
+                    posicao += palavra.Length;
+                }
+            }
+        }
+
         private void btnAddPalavras_Click(object sender, EventArgs e)
         {
-            addPalavras(palavrascheckbox);
+            addPalavras();
 
         }
     
     
-        private void addPalavras(List<string> novas)
+        private void addPalavras()
         {
 
-            foreach (var item in novas)
+            foreach (var item in clbPalavrasNovas.CheckedItems)
             {
 
                 int tamanhoVet;
@@ -374,9 +400,9 @@ namespace EditorDeTexto
                 int somacodasc = 0;
 
 
-                tamanhoVet = (item.Length);
+                tamanhoVet = (item.ToString().Length);
 
-                Char[] caractere = item.ToUpper().ToCharArray();
+                Char[] caractere = item.ToString().ToUpper().ToCharArray();
 
                 for (int i = 0; i < tamanhoVet; i++)
                 {
@@ -388,18 +414,27 @@ namespace EditorDeTexto
                 if (dicionario[somacodasc] == null)
                 {
                     dicionario[somacodasc] = new ListaEncadeada();
-                    dicionario[somacodasc].insereInicio(item);
-                    novas.Remove(item);
+                    dicionario[somacodasc].insereInicio(item.ToString());
+                    File.AppendAllText(caminho, $"{item.ToString()},");
+
+
+
 
                 }
                 else
                 {
-                    dicionario[somacodasc].insereInicio(item);
-                    novas.Remove(item);
-                }
+                    dicionario[somacodasc].insereInicio(item.ToString());
+                    File.AppendAllText(caminho, $"{item.ToString()},");
 
-            }
-            
+
+                }
+                
+
+            }     
+                  clbPalavrasNovas.Items.Clear();
+                  checarpalavras(richTextBox1);
+                  carregardicionario();
+                  MessageBox.Show("Palavras adicionadas ao dicionário com sucesso!");
         }
     
     

@@ -101,15 +101,23 @@ namespace EditorDeTexto.Classes
                 string elemento = temp.elemento;
                 while ( palavra != elemento && temp != null)
                 {
-                    if (palavra != elemento)
+                    if (palavra != elemento && temp != null)
                     {
-
-                         resultado = false;
-                        
+                         resultado = false;                        
                          temp = temp.next;
-                    }
 
-                }                             
+                        if(temp != null)
+                        {
+                           elemento = temp.elemento;
+                        }                       
+                    }                    
+                }
+                if (palavra == elemento)
+                {
+                    resultado = true;
+
+
+                }
             }
             return resultado;
         }

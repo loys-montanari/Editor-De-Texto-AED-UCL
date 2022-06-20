@@ -59,6 +59,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.clbPalavrasNovas = new System.Windows.Forms.CheckedListBox();
             this.btnAddPalavras = new System.Windows.Forms.Button();
+            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,7 +70,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.richTextBox1.Location = new System.Drawing.Point(12, 125);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(790, 568);
+            this.richTextBox1.Size = new System.Drawing.Size(552, 568);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
             // 
@@ -406,12 +407,24 @@
             this.btnAddPalavras.UseVisualStyleBackColor = true;
             this.btnAddPalavras.Click += new System.EventHandler(this.btnAddPalavras_Click);
             // 
+            // richTextBox2
+            // 
+            this.richTextBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.richTextBox2.Location = new System.Drawing.Point(582, 125);
+            this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.Size = new System.Drawing.Size(238, 568);
+            this.richTextBox2.TabIndex = 7;
+            this.richTextBox2.Text = "";
+            // 
             // frmNovo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(1018, 705);
+            this.Controls.Add(this.richTextBox2);
             this.Controls.Add(this.clbPalavrasNovas);
             this.Controls.Add(this.btnAddPalavras);
             this.Controls.Add(this.button1);
@@ -460,5 +473,6 @@
         private Button button1;
         private CheckedListBox clbPalavrasNovas;
         private Button btnAddPalavras;
+        private RichTextBox richTextBox2;
     }
 }
