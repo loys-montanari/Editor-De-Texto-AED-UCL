@@ -294,7 +294,6 @@ namespace EditorDeTexto
             this.lblPalavrasNovas.Visible = true;
         }
 
-
         private void carregardicionario()
         {
             
@@ -387,7 +386,6 @@ namespace EditorDeTexto
 
         }
     
-    
         private void addPalavras()
         {
 
@@ -433,8 +431,11 @@ namespace EditorDeTexto
         }
 
         private void btnScanear_Click(object sender, EventArgs e)
-        {
-            checarpalavras(richTextBox1);
+        {   if(richTextBox1.Text != string.Empty)
+            {
+                checarpalavras(richTextBox1);
+            }
+            
         }
 
         private void btnDicionario_Click(object sender, EventArgs e)
@@ -451,6 +452,7 @@ namespace EditorDeTexto
                 richTextBox2.Visible = false;
             }
         }
+
     }
 }
 

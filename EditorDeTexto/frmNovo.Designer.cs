@@ -72,7 +72,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.richTextBox1.Location = new System.Drawing.Point(12, 125);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(790, 568);
+            this.richTextBox1.Size = new System.Drawing.Size(665, 568);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
             // 
@@ -397,12 +397,11 @@
             // 
             // clbPalavrasNovas
             // 
-            this.clbPalavrasNovas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.clbPalavrasNovas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.clbPalavrasNovas.FormattingEnabled = true;
-            this.clbPalavrasNovas.Location = new System.Drawing.Point(831, 142);
+            this.clbPalavrasNovas.Location = new System.Drawing.Point(710, 142);
             this.clbPalavrasNovas.Name = "clbPalavrasNovas";
-            this.clbPalavrasNovas.Size = new System.Drawing.Size(175, 202);
+            this.clbPalavrasNovas.Size = new System.Drawing.Size(296, 202);
             this.clbPalavrasNovas.TabIndex = 6;
             // 
             // btnAddPalavras
@@ -418,21 +417,20 @@
             // 
             // richTextBox2
             // 
-            this.richTextBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.richTextBox2.Location = new System.Drawing.Point(831, 470);
+            this.richTextBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.richTextBox2.Location = new System.Drawing.Point(712, 427);
             this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(175, 223);
+            this.richTextBox2.Size = new System.Drawing.Size(294, 266);
             this.richTextBox2.TabIndex = 7;
             this.richTextBox2.Text = "";
             // 
             // lblDicionario
             // 
+            this.lblDicionario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDicionario.AutoSize = true;
             this.lblDicionario.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblDicionario.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblDicionario.Location = new System.Drawing.Point(831, 452);
+            this.lblDicionario.Location = new System.Drawing.Point(712, 396);
             this.lblDicionario.Name = "lblDicionario";
             this.lblDicionario.Size = new System.Drawing.Size(63, 15);
             this.lblDicionario.TabIndex = 20;
@@ -440,10 +438,11 @@
             // 
             // lblPalavrasNovas
             // 
+            this.lblPalavrasNovas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblPalavrasNovas.AutoSize = true;
             this.lblPalavrasNovas.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblPalavrasNovas.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblPalavrasNovas.Location = new System.Drawing.Point(831, 125);
+            this.lblPalavrasNovas.Location = new System.Drawing.Point(712, 125);
             this.lblPalavrasNovas.Name = "lblPalavrasNovas";
             this.lblPalavrasNovas.Size = new System.Drawing.Size(89, 15);
             this.lblPalavrasNovas.TabIndex = 21;
