@@ -99,7 +99,7 @@ namespace EditorDeTexto.Classes
             {
                 No temp = cabeca;
                 string elemento = temp.elemento;
-                while ( palavra != elemento && temp != null)
+                while ( palavra!= elemento && temp != null)
                 {
                     if (palavra != elemento && temp != null)
                     {

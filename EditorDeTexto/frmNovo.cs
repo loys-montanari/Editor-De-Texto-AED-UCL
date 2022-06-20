@@ -39,6 +39,10 @@ namespace EditorDeTexto
             }
             carregardicionario();
             this.clbPalavrasNovas.Visible = false;
+            this.lblDicionario.Visible = false;
+            this.richTextBox2.Visible = false;
+            this.btnAddPalavras.Visible = false;
+            this.lblPalavrasNovas.Visible = false;
 
 
         }
@@ -243,7 +247,7 @@ namespace EditorDeTexto
         private void checarpalavras(RichTextBox texto)
         {   
             
-            string contapalavra = texto.Text;
+            string contapalavra = texto.Text.ToLower();
 
             string[] vetorpalavras = contapalavra.Split(" ");
 
@@ -258,7 +262,7 @@ namespace EditorDeTexto
 
                 tamanhoVet = (item.Length);
 
-                Char[] caractere = item.ToUpper().ToCharArray();
+                Char[] caractere = item.ToLower().ToCharArray();
 
                 for (int i = 0; i < tamanhoVet; i++)
                 {
@@ -269,13 +273,13 @@ namespace EditorDeTexto
                
                 if(dicionario[somacodasc] == null )
                 {
-                    Destacar(richTextBox1, item);                    
+                    Destacar(richTextBox1, item.ToLower());                    
                     clbPalavrasNovas.Items.Add(item);
                     
                 } 
                 else if(dicionario[somacodasc].buscaElemento(item) == false)
                 {
-                    Destacar(richTextBox1, item);
+                    Destacar(richTextBox1, item.ToLower());
                     clbPalavrasNovas.Items.Add(item);
                     
                 }
@@ -286,13 +290,10 @@ namespace EditorDeTexto
 
             }
             this.clbPalavrasNovas.Visible = true;
+            this.btnAddPalavras.Visible = true;
+            this.lblPalavrasNovas.Visible = true;
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            checarpalavras(richTextBox1);
-            
-        }
 
         private void carregardicionario()
         {
@@ -317,7 +318,7 @@ namespace EditorDeTexto
 
                 tamanhoVet = (item.Length);
 
-                Char[] caractere = item.ToUpper().ToCharArray();
+                Char[] caractere = item.ToCharArray();
 
                 for (int i = 0; i < tamanhoVet; i++)
                 {
@@ -344,8 +345,6 @@ namespace EditorDeTexto
 
             }
             
-
-
         }
 
         private void Destacar(RichTextBox rc, string palavra)
@@ -417,27 +416,41 @@ namespace EditorDeTexto
                     dicionario[somacodasc].insereInicio(item.ToString());
                     File.AppendAllText(caminho, $"{item.ToString()},");
 
-
-
-
                 }
                 else
                 {
                     dicionario[somacodasc].insereInicio(item.ToString());
                     File.AppendAllText(caminho, $"{item.ToString()},");
 
-
                 }
                 
 
             }     
                   clbPalavrasNovas.Items.Clear();
-                  checarpalavras(richTextBox1);
                   carregardicionario();
+                  checarpalavras(richTextBox1);
                   MessageBox.Show("Palavras adicionadas ao dicionário com sucesso!");
         }
-    
-    
+
+        private void btnScanear_Click(object sender, EventArgs e)
+        {
+            checarpalavras(richTextBox1);
+        }
+
+        private void btnDicionario_Click(object sender, EventArgs e)
+        {
+            if(lblDicionario.Visible == false)
+            {
+                lblDicionario.Visible = true;
+                richTextBox2.Visible = true;
+
+            }
+            else
+            {
+                lblDicionario.Visible = false;
+                richTextBox2.Visible = false;
+            }
+        }
     }
 }
 

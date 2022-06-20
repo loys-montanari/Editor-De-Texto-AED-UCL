@@ -32,6 +32,7 @@
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnScanear = new System.Windows.Forms.Button();
             this.cboTamanho = new System.Windows.Forms.ComboBox();
             this.cboFontFamily = new System.Windows.Forms.ComboBox();
             this.btnAlinhaDireita = new System.Windows.Forms.CheckBox();
@@ -41,11 +42,11 @@
             this.btnItalic = new System.Windows.Forms.CheckBox();
             this.btnBold = new System.Windows.Forms.CheckBox();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.btnDicionario = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button8 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -56,10 +57,11 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.clbPalavrasNovas = new System.Windows.Forms.CheckedListBox();
             this.btnAddPalavras = new System.Windows.Forms.Button();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.lblDicionario = new System.Windows.Forms.Label();
+            this.lblPalavrasNovas = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,7 +72,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.richTextBox1.Location = new System.Drawing.Point(12, 125);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(552, 568);
+            this.richTextBox1.Size = new System.Drawing.Size(790, 568);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
             // 
@@ -86,6 +88,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel2.Controls.Add(this.btnScanear);
             this.panel2.Controls.Add(this.cboTamanho);
             this.panel2.Controls.Add(this.cboFontFamily);
             this.panel2.Controls.Add(this.btnAlinhaDireita);
@@ -95,11 +98,11 @@
             this.panel2.Controls.Add(this.btnItalic);
             this.panel2.Controls.Add(this.btnBold);
             this.panel2.Controls.Add(this.panel6);
+            this.panel2.Controls.Add(this.btnDicionario);
+            this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.panel5);
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Controls.Add(this.panel3);
-            this.panel2.Controls.Add(this.button8);
-            this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.btnSalvar);
             this.panel2.Controls.Add(this.label2);
@@ -111,10 +114,26 @@
             this.panel2.Size = new System.Drawing.Size(1018, 56);
             this.panel2.TabIndex = 3;
             // 
+            // btnScanear
+            // 
+            this.btnScanear.BackColor = System.Drawing.Color.Transparent;
+            this.btnScanear.BackgroundImage = global::EditorDeTexto.Properties.Resources.mecanismo_de_busca;
+            this.btnScanear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnScanear.FlatAppearance.BorderSize = 0;
+            this.btnScanear.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btnScanear.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(197)))), ((int)(((byte)(246)))));
+            this.btnScanear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnScanear.Location = new System.Drawing.Point(751, 6);
+            this.btnScanear.Name = "btnScanear";
+            this.btnScanear.Size = new System.Drawing.Size(30, 24);
+            this.btnScanear.TabIndex = 30;
+            this.btnScanear.UseVisualStyleBackColor = false;
+            this.btnScanear.Click += new System.EventHandler(this.btnScanear_Click);
+            // 
             // cboTamanho
             // 
             this.cboTamanho.FormattingEnabled = true;
-            this.cboTamanho.Location = new System.Drawing.Point(569, 11);
+            this.cboTamanho.Location = new System.Drawing.Point(444, 11);
             this.cboTamanho.Name = "cboTamanho";
             this.cboTamanho.Size = new System.Drawing.Size(95, 23);
             this.cboTamanho.TabIndex = 29;
@@ -124,7 +143,7 @@
             // cboFontFamily
             // 
             this.cboFontFamily.FormattingEnabled = true;
-            this.cboFontFamily.Location = new System.Drawing.Point(359, 11);
+            this.cboFontFamily.Location = new System.Drawing.Point(234, 11);
             this.cboFontFamily.Name = "cboFontFamily";
             this.cboFontFamily.Size = new System.Drawing.Size(193, 23);
             this.cboFontFamily.TabIndex = 28;
@@ -140,7 +159,7 @@
             this.btnAlinhaDireita.FlatAppearance.BorderSize = 0;
             this.btnAlinhaDireita.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAlinhaDireita.Font = new System.Drawing.Font("Segoe UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnAlinhaDireita.Location = new System.Drawing.Point(761, 7);
+            this.btnAlinhaDireita.Location = new System.Drawing.Point(636, 7);
             this.btnAlinhaDireita.Name = "btnAlinhaDireita";
             this.btnAlinhaDireita.Size = new System.Drawing.Size(17, 21);
             this.btnAlinhaDireita.TabIndex = 27;
@@ -157,7 +176,7 @@
             this.btnAlinhaCentro.FlatAppearance.BorderSize = 0;
             this.btnAlinhaCentro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAlinhaCentro.Font = new System.Drawing.Font("Segoe UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnAlinhaCentro.Location = new System.Drawing.Point(733, 7);
+            this.btnAlinhaCentro.Location = new System.Drawing.Point(608, 7);
             this.btnAlinhaCentro.Name = "btnAlinhaCentro";
             this.btnAlinhaCentro.Size = new System.Drawing.Size(17, 21);
             this.btnAlinhaCentro.TabIndex = 26;
@@ -174,7 +193,7 @@
             this.btnAlinhaEsquerda.FlatAppearance.BorderSize = 0;
             this.btnAlinhaEsquerda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAlinhaEsquerda.Font = new System.Drawing.Font("Segoe UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnAlinhaEsquerda.Location = new System.Drawing.Point(706, 6);
+            this.btnAlinhaEsquerda.Location = new System.Drawing.Point(581, 6);
             this.btnAlinhaEsquerda.Name = "btnAlinhaEsquerda";
             this.btnAlinhaEsquerda.Size = new System.Drawing.Size(17, 21);
             this.btnAlinhaEsquerda.TabIndex = 25;
@@ -191,7 +210,7 @@
             this.btnUnderline.FlatAppearance.BorderSize = 0;
             this.btnUnderline.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUnderline.Font = new System.Drawing.Font("Segoe UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnUnderline.Location = new System.Drawing.Point(308, 6);
+            this.btnUnderline.Location = new System.Drawing.Point(183, 6);
             this.btnUnderline.Name = "btnUnderline";
             this.btnUnderline.Size = new System.Drawing.Size(17, 21);
             this.btnUnderline.TabIndex = 24;
@@ -208,7 +227,7 @@
             this.btnItalic.FlatAppearance.BorderSize = 0;
             this.btnItalic.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnItalic.Font = new System.Drawing.Font("Segoe UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnItalic.Location = new System.Drawing.Point(280, 5);
+            this.btnItalic.Location = new System.Drawing.Point(155, 5);
             this.btnItalic.Name = "btnItalic";
             this.btnItalic.Size = new System.Drawing.Size(17, 21);
             this.btnItalic.TabIndex = 23;
@@ -225,7 +244,7 @@
             this.btnBold.FlatAppearance.BorderSize = 0;
             this.btnBold.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBold.Font = new System.Drawing.Font("Segoe UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnBold.Location = new System.Drawing.Point(253, 5);
+            this.btnBold.Location = new System.Drawing.Point(128, 5);
             this.btnBold.Name = "btnBold";
             this.btnBold.Size = new System.Drawing.Size(17, 21);
             this.btnBold.TabIndex = 22;
@@ -236,15 +255,42 @@
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.Maroon;
-            this.panel6.Location = new System.Drawing.Point(801, 1);
+            this.panel6.Location = new System.Drawing.Point(676, 1);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(1, 56);
             this.panel6.TabIndex = 6;
             // 
+            // btnDicionario
+            // 
+            this.btnDicionario.BackColor = System.Drawing.Color.Transparent;
+            this.btnDicionario.BackgroundImage = global::EditorDeTexto.Properties.Resources.big_dictionary_white;
+            this.btnDicionario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnDicionario.FlatAppearance.BorderSize = 0;
+            this.btnDicionario.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btnDicionario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(197)))), ((int)(((byte)(246)))));
+            this.btnDicionario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDicionario.Location = new System.Drawing.Point(702, 5);
+            this.btnDicionario.Name = "btnDicionario";
+            this.btnDicionario.Size = new System.Drawing.Size(30, 24);
+            this.btnDicionario.TabIndex = 20;
+            this.btnDicionario.UseVisualStyleBackColor = false;
+            this.btnDicionario.Click += new System.EventHandler(this.btnDicionario_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label4.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label4.Location = new System.Drawing.Point(710, 38);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(63, 15);
+            this.label4.TabIndex = 19;
+            this.label4.Text = "Dicionário";
+            // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.Maroon;
-            this.panel5.Location = new System.Drawing.Point(678, 1);
+            this.panel5.Location = new System.Drawing.Point(553, 1);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1, 56);
             this.panel5.TabIndex = 5;
@@ -252,7 +298,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Maroon;
-            this.panel4.Location = new System.Drawing.Point(221, 0);
+            this.panel4.Location = new System.Drawing.Point(799, 3);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1, 56);
             this.panel4.TabIndex = 21;
@@ -264,32 +310,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1, 56);
             this.panel3.TabIndex = 4;
-            // 
-            // button8
-            // 
-            this.button8.BackColor = System.Drawing.Color.Transparent;
-            this.button8.BackgroundImage = global::EditorDeTexto.Properties.Resources.big_dictionary_white;
-            this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
-            this.button8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(197)))), ((int)(((byte)(246)))));
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Location = new System.Drawing.Point(155, 6);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(30, 24);
-            this.button8.TabIndex = 20;
-            this.button8.UseVisualStyleBackColor = false;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label4.Location = new System.Drawing.Point(140, 36);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 15);
-            this.label4.TabIndex = 19;
-            this.label4.Text = "Dicionário";
             // 
             // label3
             // 
@@ -323,7 +343,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label2.Location = new System.Drawing.Point(722, 36);
+            this.label2.Location = new System.Drawing.Point(597, 36);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(39, 15);
             this.label2.TabIndex = 10;
@@ -334,7 +354,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label1.Location = new System.Drawing.Point(271, 34);
+            this.label1.Location = new System.Drawing.Point(142, 36);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(39, 15);
             this.label1.TabIndex = 4;
@@ -375,31 +395,20 @@
             this.panel7.Size = new System.Drawing.Size(1018, 1);
             this.panel7.TabIndex = 4;
             // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(839, 91);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 28);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "posicao palavra";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // clbPalavrasNovas
             // 
             this.clbPalavrasNovas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.clbPalavrasNovas.FormattingEnabled = true;
-            this.clbPalavrasNovas.Location = new System.Drawing.Point(839, 125);
+            this.clbPalavrasNovas.Location = new System.Drawing.Point(831, 142);
             this.clbPalavrasNovas.Name = "clbPalavrasNovas";
-            this.clbPalavrasNovas.Size = new System.Drawing.Size(167, 274);
+            this.clbPalavrasNovas.Size = new System.Drawing.Size(175, 202);
             this.clbPalavrasNovas.TabIndex = 6;
             // 
             // btnAddPalavras
             // 
             this.btnAddPalavras.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddPalavras.Location = new System.Drawing.Point(931, 91);
+            this.btnAddPalavras.Location = new System.Drawing.Point(931, 350);
             this.btnAddPalavras.Name = "btnAddPalavras";
             this.btnAddPalavras.Size = new System.Drawing.Size(75, 28);
             this.btnAddPalavras.TabIndex = 5;
@@ -412,11 +421,33 @@
             this.richTextBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.richTextBox2.Location = new System.Drawing.Point(582, 125);
+            this.richTextBox2.Location = new System.Drawing.Point(831, 470);
             this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(238, 568);
+            this.richTextBox2.Size = new System.Drawing.Size(175, 223);
             this.richTextBox2.TabIndex = 7;
             this.richTextBox2.Text = "";
+            // 
+            // lblDicionario
+            // 
+            this.lblDicionario.AutoSize = true;
+            this.lblDicionario.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblDicionario.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lblDicionario.Location = new System.Drawing.Point(831, 452);
+            this.lblDicionario.Name = "lblDicionario";
+            this.lblDicionario.Size = new System.Drawing.Size(63, 15);
+            this.lblDicionario.TabIndex = 20;
+            this.lblDicionario.Text = "Dicionário";
+            // 
+            // lblPalavrasNovas
+            // 
+            this.lblPalavrasNovas.AutoSize = true;
+            this.lblPalavrasNovas.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblPalavrasNovas.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lblPalavrasNovas.Location = new System.Drawing.Point(831, 125);
+            this.lblPalavrasNovas.Name = "lblPalavrasNovas";
+            this.lblPalavrasNovas.Size = new System.Drawing.Size(89, 15);
+            this.lblPalavrasNovas.TabIndex = 21;
+            this.lblPalavrasNovas.Text = "Palavras Novas";
             // 
             // frmNovo
             // 
@@ -424,10 +455,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(1018, 705);
+            this.Controls.Add(this.lblPalavrasNovas);
+            this.Controls.Add(this.lblDicionario);
             this.Controls.Add(this.richTextBox2);
             this.Controls.Add(this.clbPalavrasNovas);
             this.Controls.Add(this.btnAddPalavras);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -438,6 +470,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -455,7 +488,7 @@
         private Panel panel5;
         private Panel panel4;
         private Panel panel3;
-        private Button button8;
+        private Button btnDicionario;
         private Label label4;
         private Label label3;
         private ContextMenuStrip contextMenuStrip2;
@@ -470,9 +503,11 @@
         private ComboBox cboTamanho;
         private ComboBox cboFontFamily;
         private Panel panel7;
-        private Button button1;
         private CheckedListBox clbPalavrasNovas;
         private Button btnAddPalavras;
+        private Button btnScanear;
         private RichTextBox richTextBox2;
+        private Label lblDicionario;
+        private Label lblPalavrasNovas;
     }
 }
