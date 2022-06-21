@@ -195,12 +195,34 @@ namespace EditorDeTexto
 
         private void btnAbrir_Click(object sender, EventArgs e)
         {
+            // Create an OpenFileDialog to request a file to open.
+            OpenFileDialog openFile1 = new OpenFileDialog();
 
-            openFileDialog1.ShowDialog();     // show the dialog
+            // Initialize the OpenFileDialog to look for RTF files.
+             openFile1.DefaultExt = "*.txt";
+             openFile1.Filter = "txt files (*.txt)|*.txt|RTF Files|*.rtf";
 
-            filenamee = openFileDialog1.FileName;
-            // load the file into the richTextBox
-            richTextBox1.LoadFile(filenamee, RichTextBoxStreamType.PlainText);
+
+            if (openFile1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                if (openFile1.FileName.Length > 0 && openFile1.FileName.EndsWith("txt"))
+                {
+                    // Load the contents of the file into the RichTextBox.
+                    richTextBox1.LoadFile(openFile1.FileName, RichTextBoxStreamType.PlainText);
+                }
+                else if (openFile1.FileName.Length > 0 )
+                {                   
+                    try
+                    {
+                        // Load the contents of the file into the RichTextBox.
+                        richTextBox1.LoadFile(openFile1.FileName);
+                    }
+                    catch (System.ArgumentException)
+                    {
+                        MessageBox.Show("Tipo de arquivo inválido");
+                    }
+                }
+            }
 
         }
 
@@ -213,7 +235,7 @@ namespace EditorDeTexto
                 string file;
 
                 string filename = saveFileDialog1.FileName;
-                richTextBox1.SaveFile(filename, RichTextBoxStreamType.RichText);
+                richTextBox1.SaveFile(filename, RichTextBoxStreamType.PlainText);
                 file = Path.GetFileName(filename);
                 MessageBox.Show("Seu arquivo " + file + " foi salvo com sucesso.", "Gravação bem sucedida", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -294,14 +316,7 @@ namespace EditorDeTexto
 
         private void carregardicionario()
         {
-;
-            string exeFile = (new System.Uri(Assembly.GetEntryAssembly().CodeBase)).AbsolutePath;
-            string exeDir = Path.GetDirectoryName(exeFile);
-            var caminho = Path.Combine(exeDir, "..\\Dicionario.txt");
-
-
-            //            string conteudo = File.ReadAllText("C:\\Users\\lamontanari\\Source\\Repos\\loys-montanari\\Editor-De-Texto-AED-UCL\\EditorDeTexto\\Dicionario.txt");
-            string conteudo = File.ReadAllText(caminho);
+            string conteudo = File.ReadAllText($@"c:\temp\Dicionario.txt");
             string[] vetorpalavras = conteudo.Split(",");
 
             StringComparer ordemalfabetica = StringComparer.CurrentCultureIgnoreCase;
@@ -313,7 +328,7 @@ namespace EditorDeTexto
 
                 int tamanhoVet;
 
-                int[] codasc = new int[30];
+                int[] codasc = new int[1000];
                 int somacodasc = 0;
 
 
@@ -347,8 +362,7 @@ namespace EditorDeTexto
             }
             
         }
-
-       
+     
         private void btnAddPalavras_Click(object sender, EventArgs e)
         {
             addPalavras();
@@ -357,9 +371,7 @@ namespace EditorDeTexto
     
         private void addPalavras()
         {
-            string exeFile = (new System.Uri(Assembly.GetEntryAssembly().CodeBase)).AbsolutePath;
-            string exeDir = Path.GetDirectoryName(exeFile);
-            var caminho = Path.Combine(exeDir, "..\\Dicionario.txt");
+            var caminho = $@"c:\temp\Dicionario.txt";
 
             foreach (var item in clbPalavrasNovas.CheckedItems)
             {
