@@ -20,7 +20,6 @@ Durante a verificação do texto digitado, o programa percorre a lista encadeada
 
 Este projeto serve como uma base sólida para o estudo de estruturas de dados e a implementação de recursos em um editor de texto. Para melhorar ainda mais o programa, algumas melhorias podem ser consideradas:
 
-- Adicionar funcionalidades avançadas de formatação de texto.
 - Implementar um recurso de correção ortográfica utilizando o dicionário de palavras.
 - Permitir a importação e exportação de documentos em diferentes formatos.
 
